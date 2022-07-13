@@ -1,0 +1,41 @@
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <form action="/admin/edit-product/{{product._id}}" method="post" enctype="multipart/form-data">
+  <div class="form-group">
+    <h1 class="text-center mt-2">edit products</h1>
+    <label for="exampleInputEmail1">Name</label>
+    <input type="text" name="Name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="" value="{{product.Name}}">
+    <small id="emailHelp" class="form-text text-muted"></small>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Category</label>
+    <input type="text" name="category" class="form-control" id="exampleInputPassword1" placeholder="" value="{{product.category}}">
+  </div>
+   <div class="form-group">
+    <label for="exampleInputPassword1">price</label>
+    <input type="text" name="price" class="form-control" id="exampleInputPassword1" placeholder="" value="{{product.price}}">
+  </div>
+   <div class="form-group">
+    <label for="exampleInputPassword1">description</label>
+    <input type="text" name="description" class="form-control" id="exampleInputPassword1" placeholder="" value="{{product.description}}">
+  </div>
+    <div class="form-group">
+    <label for="exampleFormControlFile1">Image</label>
+    <img src="/product-images/{{product._id}}.jpeg" alt="" style="width: 100px; height: auto; padding-top: 4px;padding-bottom: 6px;" id="imgView" >
+    <input type="file" name="image" class="form-control-file" id="exampleFormControlFile1" onchange="viewImage(event)">
+  </div>
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+function viewImage(event){
+    document.getElementById("imgView").src=URL.createObjectURL(event.target.files[0])
+}
+</script>
