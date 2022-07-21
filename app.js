@@ -17,6 +17,7 @@ var fileUpload=require('express-fileUpload')
 var db=require('./config/connections')
 var session=require('express-session')
 
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
